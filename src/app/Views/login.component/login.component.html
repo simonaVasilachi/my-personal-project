@@ -1,19 +1,12 @@
-<!-- <form [formGroup]="loginForm">
-    <input type="text" formControlName="userName" placeholder="User Name" />
-    <br />
-    <input type="text" formControlName="password" placeholder="Password"/>
-    <button type="button" (click)="onLogin()">Login</button>
-</form> -->
-
 <form [formGroup]="loginForm" class="login-form">
     
-        <mat-form-field>
+        <mat-form-field appearance = "outline">
             <mat-label>User</mat-label>
             <input class="form-control" type="text" id="username" matInput formControlName="userName" >
         </mat-form-field>
 
 
-        <mat-form-field>
+        <mat-form-field appearance = "outline">
             <mat-label>Enter your password</mat-label>
             <input class="form-control" matInput [type]="hide ? 'password' : 'text' " formControlName="password">
 
@@ -23,28 +16,8 @@
             </button>
 
         </mat-form-field>
-        <mat-button-toggle value="login">Login</mat-button-toggle>
-   
+        <!-- <mat-button-toggle value="login" [disabled]="!loginForm.controls.userName || !loginForm.controls.password">Login</mat-button-toggle> -->
+        <mat-button-toggle value="login" [disabled]='isDisabled'>Login</mat-button-toggle>
 </form>
 
 
-<!-- <mat-toolbar>
-    <span>LOGIN</span>
-  </mat-toolbar>
-  <mat-card class="my-card">
-     <mat-card-content>
-        <form class="my-form">
-           <mat-form-field class="full-width">
-              <mat-label>User</mat-label>
-              <input  matInput  placeholder="user Name" name="userName">
-           </mat-form-field>
-           <mat-form-field class="full-width">
-              <mat-label>Password</mat-label>
-              <input  matInput  placeholder="Password" name="password">
-           </mat-form-field>
-        </form>
-     </mat-card-content>
-     <mat-card-actions>
-        <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
-     </mat-card-actions>
-  </mat-card> -->
