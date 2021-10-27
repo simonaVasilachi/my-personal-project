@@ -6,6 +6,7 @@ import { login } from "src/app/Services/login.action";
 import { navigate } from "src/app/Services/route.actions";
 
 
+
 @Component(
     {
         selector: 'login-component',
@@ -33,13 +34,13 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         //console.log(this.loginForm.controls.userName)
-        if (
-            this.loginForm.controls.userName.value === "" ||
-            this.loginForm.controls.password.value === ""
-        ) { this.isDisabled = true }
-        else {
-            this.isDisabled = false
-        }
+        // if (
+        //     this.loginForm.controls.userName.value === "" ||
+        //     this.loginForm.controls.password.value === ""
+        // ) { this.isDisabled = true }
+        // else {
+        //     this.isDisabled = false
+        // }
 
 
     }

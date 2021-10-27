@@ -1,3 +1,4 @@
+
 <form [formGroup]="loginForm" class="login-form">
     
         <mat-form-field appearance = "outline">
@@ -16,8 +17,11 @@
             </button>
 
         </mat-form-field>
-        <button value="login" [disabled]="!loginForm.controls.userName || !loginForm.controls.password">Login</button>
-        <!-- <mat-button-toggle value="login" >Login</mat-button-toggle> -->
+        <!-- <button value="login" [disabled]="!loginForm.controls.userName || !loginForm.controls.password">Login</button> -->
+        <button mat-raised-button color="primary"  routerLink='admin'>Login</button>
+       
 </form>
+
+
 
 
