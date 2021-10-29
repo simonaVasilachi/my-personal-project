@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from '../Entities/admin.component';
-import { LoginComponent } from '../Views/login.component/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent }
+  {
+    path: '',
+    redirectTo: '/',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login.module').then(m => m.LoginModule)
+  },
+
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin.module').then(m => m.AdminModule)
+  },
 ];
 
 @NgModule({
