@@ -48,9 +48,8 @@ export class LoginComponent implements OnInit {
     onLogin() {
         const { userName, password } = this.loginForm.value;
         const userInfo = new UserInfo(userName, password);
-        this.store.dispatch(login({ login: userInfo }));
-        this.store.dispatch(navigate({ url: '' }))
-
+        // this.store.dispatch(login({ login: userInfo }));
+        // this.store.dispatch(navigate({ url: '' }))
     }
 }
 
