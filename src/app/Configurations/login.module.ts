@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,16 +7,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button'
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { AppRoutingModule } from "src/app/Configurations/app-routing.module";
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login.component';
+import { LoginComponent } from '../Views/login.component/login.component';
+import { LoginRoutingModule } from './login-routing.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
     ReactiveFormsModule,
-    // FormsModule,
     CommonModule,
     MatFormFieldModule,
     MatIconModule,
@@ -25,10 +22,11 @@ import { LoginComponent } from './login.component';
     MatButtonModule,
     MatInputModule,
     MatButtonToggleModule,
-    AppRoutingModule,
     RouterModule,
+    LoginRoutingModule
 
   ],
   declarations: [LoginComponent],
+  exports: []
 })
 export class LoginModule { }
