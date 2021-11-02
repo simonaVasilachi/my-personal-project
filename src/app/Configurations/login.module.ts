@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { RouterModule } from '@angular/router';
 
-import { LoginComponent } from '../Views/login.component/login.component';
+import { LoginView } from '../Views/login.view/login.view';
 import { LoginRoutingModule } from './login-routing.module';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { LoginRoutingModule } from './login-routing.module';
     LoginRoutingModule
 
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginView],
   exports: []
 })
 export class LoginModule { }
