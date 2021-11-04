@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { AdminRoutingModule } from "./admin-routing.module";
-import { AdminComponent } from "../Views/admin.view/admin.component";
+import { AdminRoutingModule } from "../../Routing/admin-routing.module";
+import { AdminComponent } from "../../Views/admin-view/admin-view.component";
 
 @NgModule({
     imports: [
