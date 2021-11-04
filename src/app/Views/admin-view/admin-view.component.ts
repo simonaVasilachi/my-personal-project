@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component ({
     selector: 'admin-component',
-    templateUrl: 'admin.component.html'
+    templateUrl: 'admin-view.component.html'
 })
 
 export class AdminComponent implements OnInit {

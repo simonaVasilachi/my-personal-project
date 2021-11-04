@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from '../Views/app.component';
+import { AppRoutingModule } from './Routing/app-routing.module';
+import { AppComponent } from './Views/app-view/app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -15,9 +14,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule
-  ],
+    BrowserAnimationsModule
+
+],
 
   declarations: [
     AppComponent

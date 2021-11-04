@@ -5,7 +5,7 @@
             "username": "bd",
             "firstName": "Bruce",
             "lastName": "Dave",
-            "email": "bruce@mail.com",
+            "email": "admin@admin.com",
             "role": "admin"
         },
         {
@@ -22,7 +22,7 @@
             "firstName": "Chloe",
             "lastName": "Ting",
             "email": "chloe@mail.com",
-            "role": "admin"
+            "role": "user"
         }
     ]
 }
