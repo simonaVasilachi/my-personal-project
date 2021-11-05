@@ -13,6 +13,6 @@ import { Router } from "@angular/router";
   export class LoginViewComponent {
     constructor(private router: Router) { }
       onSubmit() {
-        this.router.navigateByUrl('/admin');
+        this.router.navigateByUrl('/dashboard');
       }
   }
