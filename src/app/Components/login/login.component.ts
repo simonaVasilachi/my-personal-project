@@ -34,8 +34,7 @@ export class LoginComponent {
   formSubmit() {
     this.submit.emit({
       password: this.passwordFormControl.value,
-      email: this.emailFormControl.value,
+      email: this.emailFormControl.value
     });
-   // this.store.dispatch(new )
   }
 }
