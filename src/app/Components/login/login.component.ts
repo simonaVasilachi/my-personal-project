@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 
+import { LoginDetails } from "src/app/Entities/login-details.interface";
+
 
 @Component(
   {
@@ -12,7 +14,7 @@ import { FormControl, Validators } from "@angular/forms";
 
 
 export class LoginComponent {
-  @Output() submit = new EventEmitter<void>()
+  @Output() submit = new EventEmitter<LoginDetails>()
   hide = true;
 
 
@@ -28,7 +30,10 @@ export class LoginComponent {
   }
 
   formSubmit() {
-    this.submit.emit();
+    this.submit.emit({
+      password: this.passwordFormControl.value,
+      email: this.emailFormControl.value
+    });
   }
 
 }

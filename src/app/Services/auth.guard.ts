@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(private authService: AuthService, private router: Router) { }
   
   canActivateChild(): boolean {
-    const isAuth =  this.authService.login();
+    const isAuth =  this.authService.isUserAuth();
     if(isAuth) {
       return true;
     } else {
@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   canActivate(): boolean {
-    const isAuth = this.authService.login();
+    const isAuth = this.authService.login('','');
     if (isAuth) {
       return true;
     } else {
