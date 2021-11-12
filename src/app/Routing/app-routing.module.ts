@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from '../Services/auth.guard';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -13,21 +12,28 @@ const routes: Routes = [
 
   {
     path: 'login',
-    loadChildren: () => import('../Views/login-view/login-view.module').then(m => m.LoginViewModule)
+    loadChildren: () =>
+      import('../Views/login-view/login-view.module').then(
+        (m) => m.LoginViewModule
+      ),
   },
 
   {
     path: 'dashboard',
     canActivate: [AuthGuard],
-    loadChildren: () => import('../Components/dashboard/dashboard.module').then(m => m.DashboardModule)
+    loadChildren: () =>
+      import('../Components/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    // enableTracing: true
-  })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      // enableTracing: true
+    }),
+  ],
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}

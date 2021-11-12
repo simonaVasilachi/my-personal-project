@@ -1,8 +1,8 @@
-export interface UserInterface {
-    id?: number;
-    userName?: string;
-    firstName?: string;
-    lastName?: string;
-    email: string;
-    password: string;
+import { LoginDetails } from './login-details.interface';
+
+export interface UserInterface extends LoginDetails {
+  id?: number;
+  userName?: string;
+  firstName?: string;
+  lastName?: string;
 }

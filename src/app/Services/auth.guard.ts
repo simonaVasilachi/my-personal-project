@@ -1,34 +1,45 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
+import { isAuth } from '../Store/Selectors/auth.selector';
 import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class AuthGuard implements CanActivate, CanActivateChild {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private store: Store
+  ) {}
 
-  constructor(private authService: AuthService, private router: Router) { }
-  
-  canActivateChild(): boolean {
-    const isAuth =  this.authService.isUserAuth();
-    if(isAuth) {
-      return true;
-    } else {
-      this.router.navigateByUrl('/login');
-      return false;
-    }
+  canActivate(): Observable<boolean> {
+    return this.store.pipe(
+      select(isAuth),
+      map((isAuth: boolean) => {
+        if (!isAuth) {
+          this.router.navigateByUrl('/');
+          return false;
+        }
+        return isAuth;
+      })
+    );
   }
 
-  canActivate(): boolean {
-    const isAuth = this.authService.login('','');
-    if (isAuth) {
-      return true;
-    } else {
-      this.router.navigateByUrl('/login');
-      return false;
-    }
+  canActivateChild(): Observable<boolean> {
+    return this.store.pipe(
+      select(isAuth),
+      map((isAuth: boolean) => {
+        if (!isAuth) {
+          this.router.navigateByUrl('/');
+          return false;
+        }
+        return isAuth;
+      })
+    );
   }
-
 }

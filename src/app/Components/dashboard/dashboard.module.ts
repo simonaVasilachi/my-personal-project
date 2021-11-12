@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 
 import { DashboardRoutingModule } from "../../Routing/dashboard-routing.module";
 import { DashboardViewComponent } from "../../Views/dashboard-view/dashboard-view.component";
-import { UsersService } from "src/app/Services/users.service";
+import { UsersService } from "../../Services/users.service";
 
 @NgModule({
     imports: [

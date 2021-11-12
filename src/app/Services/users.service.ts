@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -9,12 +8,13 @@ import { UsersAPI } from '../Repositories/users-api.model';
   providedIn: 'root',
 })
 export class UsersService {
-  private users: UserInterface[] = [];
-  private usersUrl = 'http://localhost:3000/users';
-
-  constructor(private http: HttpClient, private usersAPI: UsersAPI) {}
+  constructor(private usersAPI: UsersAPI) {}
 
   getUsers(): Observable<UserInterface[]> {
     return this.usersAPI.getUsers();
+  }
+
+  getUser(email: string): Observable<UserInterface> {
+    return this.usersAPI.getUser(email);
   }
 }
