@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { logout } from '../../Store/Actions/auth.actions';
 
 @Component({
   selector: 'dashboard-view',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DashboardViewComponent implements OnInit {
-  constructor() {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
+
+  logout() {
+    this.store.dispatch(logout({url: '/'}))
+  }
 }

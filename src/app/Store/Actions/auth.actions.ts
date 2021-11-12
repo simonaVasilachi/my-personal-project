@@ -13,3 +13,8 @@ export const authenticationSuccess = createAction(
 export const authenticationFailed = createAction(
   '[Authentification] authenticationFaild'
 );
+
+export const logout = createAction(
+  '[Authentification] logout',
+  props<{ url: string }>()
+);

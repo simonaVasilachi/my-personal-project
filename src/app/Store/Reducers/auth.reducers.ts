@@ -18,6 +18,12 @@ const authReducer = createReducer(
       ...state,
       authenticated: (action as any).auth,
     };
+  }),
+  on(AuthActions.logout, (state: AuthState, action: Action) => {
+    return {
+      ...state,
+      authenticated: false,
+    };
   })
 );
 

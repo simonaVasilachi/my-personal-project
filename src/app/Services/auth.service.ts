@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { UserInterface } from '../Entities/user.interface';
@@ -9,7 +10,7 @@ import { UsersService } from './users.service';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private userService: UsersService) {}
+  constructor(private userService: UsersService, private router: Router) {}
 
   login(
     emailFormControl: string,
@@ -24,5 +25,9 @@ export class AuthService {
         }
       })
     );
+  }
+
+  logout(url: string) {
+    this.router.navigateByUrl(url);
   }
 }
