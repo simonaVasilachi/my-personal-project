@@ -6,7 +6,8 @@
             "firstName": "Bruce",
             "lastName": "Dave",
             "email": "admin@admin.com",
-            "role": "admin"
+            "role": "admin",
+            "password": "admin"
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "firstName": "Eva",
             "lastName": "Spring",
             "email": "eva@mail.com",
-            "role": "admin"
+            "role": "admin",
+            "password": "123"
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "firstName": "Chloe",
             "lastName": "Ting",
             "email": "chloe@mail.com",
-            "role": "user"
+            "role": "user",
+            "password": "parola"
         }
     ]
 }
