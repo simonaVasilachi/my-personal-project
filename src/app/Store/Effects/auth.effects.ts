@@ -3,11 +3,22 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { switchMap, tap } from 'rxjs/operators';
 
 import { AuthService } from 'src/app/Services/auth.service';
-import { authentication, authenticationFailed, authenticationSuccess, logout } from '../Actions/auth.actions';
+import { SnackbarService } from 'src/app/Services/snackbar.service';
+import {
+  authentication,
+  authenticationFailed,
+  authenticationSuccess,
+  logout
+} from '../Actions/auth.actions';
+import { SNACKBARSTATUS } from '../Actions/snack-bar.actions';
 
 @Injectable()
 export class AuthEffects {
-  constructor(private authService: AuthService, private actions$: Actions) {}
+  constructor(
+    private authService: AuthService,
+    private actions$: Actions,
+    private snackbarService: SnackbarService
+  ) {}
 
   auth$ = createEffect(() =>
     this.actions$.pipe(
@@ -21,6 +32,17 @@ export class AuthEffects {
           : [authenticationFailed()]
       )
     )
+  );
+
+  authenticationFailed$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(authenticationFailed),
+        tap((_) =>
+          this.snackbarService.showNotification('Password or username are incorrect', SNACKBARSTATUS.ERROR)
+        )
+      ),
+    { dispatch: false }
   );
 
   logout$ = createEffect(
