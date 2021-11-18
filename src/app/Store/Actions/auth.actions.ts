@@ -18,3 +18,4 @@ export const logout = createAction(
   '[Authentification] logout',
   props<{ url: string }>()
 );
+
