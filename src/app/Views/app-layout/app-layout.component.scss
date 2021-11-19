@@ -1,0 +1,26 @@
+// .header {
+// position: fixed;
+// top: 0;
+// left: 0;
+// right: 0;
+// }
+
+.mat-sidenav {
+  width: 150px;
+  height: 100%;
+}
+
+.mat-sidenav-container {
+  height: 100%;
+}
+
+.mat-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.active-link{
+  background-color: rgb(216, 187, 187);
+  color: rgb(0, 0, 0);
+}

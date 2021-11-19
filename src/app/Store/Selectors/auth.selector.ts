@@ -5,5 +5,5 @@ export const authState = createFeatureSelector<AuthState>(authFeatureKey);
 
 export const isAuth = createSelector(
   authState,
-  (state: AuthState) => state.authenticated
+  (state: AuthState) =>  true //state.authenticated
 );

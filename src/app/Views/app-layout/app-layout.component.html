@@ -1,0 +1,23 @@
+<div>
+  <mat-toolbar class="header">
+  </mat-toolbar>
+</div>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened position="start">
+
+    <mat-nav-list>
+      <button routerLink="dashboard" routerLinkActive="active-link" mat-raised-button type="button"
+        (click)="navigate()"><i class="fas fa-th-large" style="margin-right: 0.5em;"></i>DASHBOARD
+      </button>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
