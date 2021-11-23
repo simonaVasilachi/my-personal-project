@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 
-import { LoginDetails } from 'src/app/Entities/login-details.interface';
-import { SnackbarService } from 'src/app/Services/snackbar.service';
-import { authentication } from 'src/app/Store/Actions/auth.actions';
-import { SNACKBARSTATUS } from 'src/app/Store/Actions/snack-bar.actions';
-import { isAuth } from 'src/app/Store/Selectors/auth.selector';
+import { LoginDetails } from '../../Entities/login-details.interface';
+import { SnackbarService } from '../../Services/snackbar.service';
+import { authentication } from '../../Store/Actions/auth.actions';
+import { SNACKBARSTATUS } from '../../Store/Actions/snack-bar.actions';
+import { isAuth } from '../../Store/Selectors/auth.selector';
 
 @Component({
   selector: 'login-view',

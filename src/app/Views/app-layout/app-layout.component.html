@@ -7,8 +7,10 @@
   <mat-sidenav mode="side" opened position="start">
 
     <mat-nav-list>
-      <button routerLink="dashboard" routerLinkActive="active-link" mat-raised-button type="button"
-        (click)="navigate()"><i class="fas fa-th-large" style="margin-right: 0.5em;"></i>DASHBOARD
+      <button *ngFor="let item of items; index as i; " [routerLink]="item.route" routerLinkActive="active-link"
+        mat-raised-button type="button" (click)="navigate(item.route)"> <span class="material-icons">
+          {{item.icon}}
+        </span>{{item.title | uppercase}}
       </button>
     </mat-nav-list>
 

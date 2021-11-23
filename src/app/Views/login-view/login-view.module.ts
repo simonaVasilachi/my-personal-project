@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { LoginRoutingModule } from '../../Routing/login-routing.module';
 import { MatCardModule } from '@angular/material/card';
-import { UsersAPI } from 'src/app/Repositories/users-api.model';
-import { UsersService } from 'src/app/Services/users.service';
+
+import { LoginRoutingModule } from '../../Routing/login-routing.module';
+import { UsersAPI } from '../../Repositories/users-api.model';
+import { UsersService } from '../../Services/users.service';
 
 @NgModule({
   imports: [LoginRoutingModule, MatCardModule],

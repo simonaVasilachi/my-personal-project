@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
-import { SnackbarService } from 'src/app/Services/snackbar.service';
+import { SnackbarService } from '../../Services/snackbar.service';
 import { snackbarFail, snackbarInfo, SNACKBARSTATUS, snackbarSuccess } from '../Actions/snack-bar.actions';
 
 @Injectable()

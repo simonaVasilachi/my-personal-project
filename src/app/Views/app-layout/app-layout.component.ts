@@ -7,8 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['app-layout.component.scss'],
 })
 export class AppLayoutComponent {
+  public items = [
+    { route: 'dashboard', icon: 'dashboard', title: 'DASHBOARD' },
+  ];
+
   constructor(private router: Router) {}
-  navigate() {
-    this.router.navigateByUrl('dashboard');
+
+  navigate(route: string) {
+    this.router.navigateByUrl(route);
   }
 }
