@@ -1,0 +1,25 @@
+<div>
+  <mat-toolbar class="header">
+  </mat-toolbar>
+</div>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened position="start">
+
+    <mat-nav-list>
+      <button *ngFor="let item of items; index as i; " [routerLink]="item.route" routerLinkActive="active-link"
+        mat-raised-button type="button" (click)="navigate(item.route)"> <span class="material-icons">
+          {{item.icon}}
+        </span>{{item.title | uppercase}}
+      </button>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

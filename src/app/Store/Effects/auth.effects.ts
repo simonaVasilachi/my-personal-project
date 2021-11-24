@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { switchMap, tap } from 'rxjs/operators';
 
-import { AuthService } from 'src/app/Services/auth.service';
-import { SnackbarService } from 'src/app/Services/snackbar.service';
+import { AuthService } from '../../Services/auth.service';
+import { SnackbarService } from '../../Services/snackbar.service';
 import {
   authentication,
   authenticationFailed,
